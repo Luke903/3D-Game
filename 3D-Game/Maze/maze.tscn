@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbkt7eb2wyto5"]
+
+[ext_resource type="Script" path="res://Maze/Maze.gd" id="1_t2bj8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1oaru"]
+size = Vector3(20, 0.2, 20)
+
+[sub_resource type="BoxMesh" id="BoxMesh_oubdm"]
+size = Vector3(20, 0.2, 20)
+
+[node name="Maze" type="Node3D"]
+script = ExtResource("1_t2bj8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_1oaru")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/CollisionShape3D"]
+top_level = true
+custom_aabb = AABB(0, 0, 0, 20, 0.5, 20)
+mesh = SubResource("BoxMesh_oubdm")
