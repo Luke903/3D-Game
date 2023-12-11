@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bke2luppbxj0l"
+path="res://.godot/imported/bullet-9mm.obj-35136bb19ff489fcb89527fb5b5f78ad.mesh"
+
+[deps]
+
+files=["res://.godot/imported/bullet-9mm.obj-35136bb19ff489fcb89527fb5b5f78ad.mesh"]
+
+source_file="res://Assests/weapons_pack_guns/guns/obj_mtl/bullet-9mm.obj"
+dest_files=["res://.godot/imported/bullet-9mm.obj-35136bb19ff489fcb89527fb5b5f78ad.mesh", "res://.godot/imported/bullet-9mm.obj-35136bb19ff489fcb89527fb5b5f78ad.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

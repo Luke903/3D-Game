@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://x152gufm4kcg"
+path="res://.godot/imported/uzi.obj-3353499cae8299a64c922ba75f5249b9.mesh"
+
+[deps]
+
+files=["res://.godot/imported/uzi.obj-3353499cae8299a64c922ba75f5249b9.mesh"]
+
+source_file="res://Assests/weapons_pack_guns/guns/obj_mtl/uzi.obj"
+dest_files=["res://.godot/imported/uzi.obj-3353499cae8299a64c922ba75f5249b9.mesh", "res://.godot/imported/uzi.obj-3353499cae8299a64c922ba75f5249b9.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
