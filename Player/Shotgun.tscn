@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://c3vae0y64345s"]
+
+[ext_resource type="Script" path="res://Player/Shotgun.gd" id="1_u51eu"]
+[ext_resource type="ArrayMesh" uid="uid://bumrfwr6cr3dm" path="res://Assests/weapons_pack_guns/guns/obj_mtl/shotgun.obj" id="2_qmqgn"]
+[ext_resource type="ArrayMesh" uid="uid://ivemlqdn1n0i" path="res://Assests/jkm_muzzleflash/muzzleflash.obj" id="3_2ym1a"]
+[ext_resource type="Material" uid="uid://daevagr23huxy" path="res://Assests/muzzle.tres" id="4_s66ut"]
+[ext_resource type="Texture2D" uid="uid://n8mkdfjhllqk" path="res://Assests/crosshair_white_small.png" id="5_ss1rk"]
+[ext_resource type="AudioStream" uid="uid://bwn230kpicvg7" path="res://Assests/275151__bird_man__gun-shot.wav" id="6_fcus8"]
+
+[node name="Shotgun" type="Node3D"]
+script = ExtResource("1_u51eu")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.999391, 0, 0.0348995, 0, 1, 0, -0.0348995, 0, 0.999391, 0.934529, 1.6, 0.296658)
+mesh = ExtResource("2_qmqgn")
+
+[node name="Muzzle" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 1.6, 0.655886)
+visible = false
+
+[node name="Muzzleflash" type="MeshInstance3D" parent="Muzzle"]
+transform = Transform3D(-1.09278e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.09278e-08, 0.471001, 0.153936, -0.00332204)
+mesh = ExtResource("3_2ym1a")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_s66ut")
+surface_material_override/1 = ExtResource("4_s66ut")
+surface_material_override/2 = ExtResource("4_s66ut")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Muzzle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35839, 0.139125, 0)
+light_color = Color(0.941176, 0.882353, 0.65098, 1)
+light_energy = 4.879
+distance_fade_begin = 0.0
+omni_range = 29.19
+omni_attenuation = 1.51572
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[node name="Aim" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.936466, 1.96807, 0)
+target_position = Vector3(10, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(-3.27835e-09, 0, -0.075, 0, 0.075, 0, 0.075, 0, -3.27835e-09, 1.15369, 1.96791, 0)
+texture = ExtResource("5_ss1rk")
+
+[node name="sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_fcus8")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

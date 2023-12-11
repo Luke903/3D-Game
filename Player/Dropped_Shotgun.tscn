@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://wiyame65eu58"]
+
+[ext_resource type="Script" path="res://Player/Dropped_Shotgun.gd" id="1_g38ax"]
+[ext_resource type="ArrayMesh" uid="uid://bumrfwr6cr3dm" path="res://Assests/weapons_pack_guns/guns/obj_mtl/shotgun.obj" id="2_qgbsw"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_o5ave"]
+rough = true
+bounce = 0.08
+absorbent = true
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_6k52n"]
+points = PackedVector3Array(-0.325428, 0.122539, -0.0311278, 0.330928, 0.173828, 0.00989043, 0.330928, 0.163566, 0.020148, -0.192049, -0.0210278, -0.0208702, -0.325428, 0.143043, 0.0304056, -0.253534, -0.0210278, 0.020148, 0.330928, 0.143043, -0.0208702, -0.243319, 0.173828, -0.0311278, 0.279594, 0.102035, 0.00989043, -0.0485197, 0.173828, 0.0304056, -0.0485197, 0.0917542, -0.0311278, -0.0485197, 0.0917542, 0.0304056, -0.284373, -0.0107662, -0.0208702, -0.192049, -0.0210278, 0.020148, -0.0485197, 0.173828, -0.0311278, -0.253534, 0.173828, 0.0304056, -0.315148, 0.0917542, 0.0304056, 0.279594, 0.102035, -0.0106127, 0.330928, 0.143043, 0.020148, 0.330928, 0.163566, -0.0208702, -0.315148, 0.153305, -0.0311278, -0.294653, 0.0815117, -0.0311278, -0.284373, -0.0107662, 0.020148, 0.330928, 0.173828, -0.0106127, -0.284373, 0.0712883, 0.0304056, -0.294653, 0.163566, 0.0304056, 0.330928, 0.132781, -0.0106127, -0.253534, -0.0210278, -0.0208702, -0.294653, 0.163566, -0.0311278, -0.325428, 0.122539, 0.0304056, -0.325428, 0.143043, -0.0311278, 0.330928, 0.132781, 0.00989043)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_8ghk7"]
+radius = 1.0
+
+[node name="Dropped_Shotgun" type="RigidBody3D"]
+physics_material_override = SubResource("PhysicsMaterial_o5ave")
+script = ExtResource("1_g38ax")
+
+[node name="Shotgun" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.042, 0)
+mesh = ExtResource("2_qgbsw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.495346, 0.0422777, 0.0968957)
+shape = SubResource("ConvexPolygonShape3D_6k52n")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_8ghk7")

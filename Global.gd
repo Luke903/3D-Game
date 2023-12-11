@@ -12,6 +12,8 @@ func _unhandled_input(event):
 			if not menu.visible:
 				menu.show()
 				get_tree().paused = true 	# pause the game while the menu is visible
+				Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 			else:
 				menu.hide()
 				get_tree().paused = false
+				Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
